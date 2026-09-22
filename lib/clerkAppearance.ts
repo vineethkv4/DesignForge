@@ -1,0 +1,47 @@
+import type { Appearance } from "@clerk/types";
+
+/** Stable appearance — colors follow auth.css CSS vars via .dark on html */
+export const CLERK_APPEARANCE: Appearance = {
+  variables: {
+    colorPrimary: "#7733ff",
+    colorDanger: "#ef4444",
+    colorSuccess: "#10b981",
+    colorText: "var(--auth-text)",
+    colorTextSecondary: "var(--auth-text-muted)",
+    colorBackground: "transparent",
+    colorInputBackground: "var(--auth-input-bg)",
+    colorInputText: "var(--auth-text)",
+    borderRadius: "11px",
+    fontFamily: "Inter, system-ui, sans-serif",
+    fontSize: "14px",
+  },
+  elements: {
+    rootBox: "w-full",
+    card: "auth-clerk-card",
+    cardBox: "shadow-none bg-transparent p-0",
+    header: "hidden",
+    headerTitle: "hidden",
+    headerSubtitle: "hidden",
+    socialButtonsBlockButton: "auth-social-btn",
+    socialButtonsBlockButtonText: "font-medium",
+    dividerLine: "bg-[var(--auth-border)]",
+    dividerText: "text-[var(--auth-text-faint)] text-xs",
+    formFieldLabel: "auth-form-label",
+    formFieldInput: "auth-form-input",
+    formButtonPrimary: "auth-submit-btn",
+    footerActionLink: "text-[var(--ac3)] hover:text-white font-medium",
+    footerActionText: "text-[var(--auth-text-muted)]",
+    identityPreviewEditButton: "text-[var(--ac3)]",
+    formFieldInputShowPasswordButton: "text-[var(--auth-text-faint)]",
+    otpCodeFieldInput: "auth-form-input",
+    alternativeMethodsBlockButton: "auth-social-btn",
+    backLink: "text-[var(--ac3)]",
+    navbar: "hidden",
+    footer: "hidden",
+  },
+  layout: {
+    socialButtonsPlacement: "top",
+    socialButtonsVariant: "blockButton",
+    showOptionalFields: true,
+  },
+};

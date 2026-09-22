@@ -1,0 +1,368 @@
+/* Design systems library — card grid page (from design_systems_page mockup) */
+
+.syslib-page {
+  max-width: 100%;
+  padding: 8px 4px 48px;
+}
+
+.syslib-page-hd {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.syslib-page-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--app-text);
+  margin: 0 0 5px;
+}
+
+.syslib-page-sub {
+  font-size: 13px;
+  color: var(--app-text-muted);
+  margin: 0;
+}
+
+.syslib-ctrl-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.syslib-ctrl-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--app-surface);
+  border: 0.5px solid var(--app-border2);
+  border-radius: 9px;
+  padding: 8px 12px;
+  flex: 1;
+  min-width: 200px;
+  max-width: 320px;
+}
+
+.syslib-ctrl-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 12.5px;
+  color: var(--app-text);
+  font-family: inherit;
+  width: 100%;
+}
+
+.syslib-ctrl-search input::placeholder {
+  color: var(--app-text-muted);
+}
+
+.syslib-filter-tabs {
+  display: flex;
+  gap: 3px;
+  background: var(--app-surface2);
+  padding: 3px;
+  border-radius: 9px;
+}
+
+.syslib-filter-tab {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--app-text-muted);
+  padding: 6px 13px;
+  border-radius: 7px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.syslib-filter-tab:hover {
+  color: var(--app-text);
+}
+
+.syslib-filter-tab.on {
+  background: var(--app-surface);
+  color: var(--app-text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.syslib-filter-tab .cnt {
+  font-size: 10px;
+  color: var(--app-text-muted);
+}
+
+.syslib-sort-select {
+  font-size: 12px;
+  color: var(--app-text-secondary);
+  background: var(--app-surface);
+  border: 0.5px solid var(--app-border2);
+  border-radius: 9px;
+  padding: 8px 10px;
+  font-family: inherit;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.syslib-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.syslib-card {
+  border: 0.5px solid var(--app-border);
+  border-radius: 14px;
+  background: var(--app-surface);
+  overflow: hidden;
+  transition: all 0.18s;
+  position: relative;
+  animation: syslib-fu 0.25s ease both;
+}
+
+@keyframes syslib-fu {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.syslib-card:hover {
+  border-color: var(--app-border2);
+  box-shadow: 0 8px 24px -10px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.syslib-card-top {
+  height: 64px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px 14px;
+}
+
+.syslib-card-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #4f4f4b;
+  z-index: 3;
+}
+
+.syslib-card-menu:hover {
+  background: #fff;
+  color: #0f0f0e;
+}
+
+.syslib-status {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 5px;
+  backdrop-filter: blur(4px);
+}
+
+.syslib-status.st-draft {
+  background: rgba(245, 158, 11, 0.16);
+  color: #7a4a06;
+}
+
+.syslib-status.st-published {
+  background: rgba(16, 185, 129, 0.18);
+  color: #054d38;
+}
+
+.syslib-card-body {
+  padding: 13px 14px 14px;
+}
+
+.syslib-name {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--app-text);
+  margin-bottom: 2px;
+}
+
+.syslib-org {
+  font-size: 11.5px;
+  color: var(--app-text-muted);
+  margin-bottom: 11px;
+}
+
+.syslib-scale-strip {
+  display: flex;
+  gap: 2px;
+  height: 9px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.syslib-scale-strip div {
+  flex: 1;
+}
+
+.syslib-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10.5px;
+  color: var(--app-text-muted);
+  margin-bottom: 13px;
+}
+
+.syslib-meta-row span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.syslib-actions {
+  display: flex;
+  gap: 7px;
+}
+
+.syslib-btn-primary {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  padding: 8px 0;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.15s;
+  text-align: center;
+}
+
+.syslib-btn-primary:hover {
+  opacity: 0.9;
+}
+
+.syslib-btn-secondary {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--app-text-secondary);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 0.5px solid var(--app-border2);
+  cursor: pointer;
+  font-family: inherit;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.syslib-btn-secondary:hover {
+  background: var(--app-surface2);
+  color: var(--app-text);
+}
+
+.syslib-menu-pop {
+  position: absolute;
+  top: 38px;
+  right: 10px;
+  background: var(--app-surface);
+  border: 0.5px solid var(--app-border);
+  border-radius: 10px;
+  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.18);
+  z-index: 10;
+  min-width: 150px;
+  overflow: hidden;
+}
+
+.syslib-cm-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 9px 12px;
+  font-size: 12.5px;
+  color: var(--app-text-secondary);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  text-align: left;
+}
+
+.syslib-cm-item:hover {
+  background: var(--app-surface2);
+  color: var(--app-text);
+}
+
+.syslib-cm-item.danger {
+  color: #ef4444;
+}
+
+.syslib-cm-item.danger:hover {
+  background: var(--app-red-bg);
+}
+
+.syslib-cm-sep {
+  height: 0.5px;
+  background: var(--app-border);
+  margin: 4px 0;
+}
+
+.syslib-empty {
+  padding: 70px 20px;
+  text-align: center;
+  border: 1.5px dashed var(--app-border2);
+  border-radius: 16px;
+  color: var(--app-text-muted);
+}
+
+.syslib-empty h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--app-text);
+  margin: 14px 0 6px;
+}
+
+.syslib-empty p {
+  font-size: 12.5px;
+  margin: 0 0 18px;
+}
+
+.syslib-empty .app-btn-primary {
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .syslib-page-hd {
+    flex-direction: column;
+  }
+
+  .syslib-sort-select {
+    margin-left: 0;
+    width: 100%;
+  }
+}

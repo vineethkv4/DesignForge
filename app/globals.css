@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Inter+Tight:wght@600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand — primary #7733FF · secondary #00e5be */
+  --color-primary: #7733ff;
+  --color-primary-hover: #661fff;
+  --color-primary-rgb: 119, 51, 255;
+  --color-primary-dim: rgba(119, 51, 255, 0.08);
+  --color-primary-border: rgba(119, 51, 255, 0.2);
+
+  --color-secondary: #00e5be;
+  --color-secondary-hover: #00ccaa;
+  --color-secondary-rgb: 0, 229, 190;
+  --color-secondary-dim: rgba(0, 229, 190, 0.1);
+  --color-secondary-border: rgba(0, 229, 190, 0.28);
+
+  --gradient-brand: linear-gradient(135deg, #7733ff 0%, #00e5be 100%);
+  --gradient-brand-reverse: linear-gradient(135deg, #00e5be 0%, #7733ff 100%);
+  --gradient-brand-soft: linear-gradient(
+    135deg,
+    rgba(119, 51, 255, 0.14) 0%,
+    rgba(0, 229, 190, 0.12) 100%
+  );
+
+  /* Legacy aliases (landing, auth, onboarding) */
+  --ac: var(--color-primary);
+  --ac2: var(--color-secondary);
+  --ac3: #c4b5fd;
+  --acl: var(--color-primary-dim);
+  --acb: var(--color-primary-border);
+  --emerald: #10b981;
+  --emerald-dim: rgba(16, 185, 129, 0.1);
+  --amber: #f59e0b;
+  --blue: #3b82f6;
+  --ez: cubic-bezier(0.16, 1, 0.3, 1);
+  --font-inter: "Inter", system-ui, sans-serif;
+  --font-inter-tight: "Inter Tight", system-ui, sans-serif;
+}
+
+/* Shared logo gem — used on landing, auth, app, editor, onboarding */
+.df-logo-gem {
+  border-radius: 8px;
+  background: var(--gradient-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 20px rgba(119, 51, 255, 0.22);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes word-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes orb-float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) translateX(-50%) scale(1.05);
+  }
+}
+
+@keyframes orb-float-2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(20px, -20px) scale(1.04);
+  }
+}
+
+@keyframes orb-float-3 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-15px, -25px) scale(1.06);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s var(--ez) both;
+}
+
+.animate-word-in {
+  animation: word-in 0.7s var(--ez) both;
+}
+
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+.animate-orb-1 {
+  animation: orb-float 10s ease-in-out infinite;
+}
+
+.animate-orb-2 {
+  animation: orb-float-2 12s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.animate-orb-3 {
+  animation: orb-float-3 9s ease-in-out infinite;
+  animation-delay: -6s;
+}

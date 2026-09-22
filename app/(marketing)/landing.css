@@ -1,0 +1,648 @@
+/* Landing page theme — maps to globals.css brand tokens */
+
+.landing-page {
+  /* Surfaces */
+  --lp-bg: #ffffff;
+  --lp-bg2: #fafafa;
+  --lp-bg3: #f5f5f7;
+  --lp-bg4: #efefef;
+  --lp-fg: #0a0a0f;
+  --lp-on-brand: #ffffff;
+
+  /* Neutrals */
+  --lp-grey1: rgba(0, 0, 0, 0.04);
+  --lp-grey2: rgba(0, 0, 0, 0.07);
+  --lp-text: rgba(10, 10, 15, 0.9);
+  --lp-text-muted: rgba(10, 10, 15, 0.45);
+  --lp-text-faint: rgba(10, 10, 15, 0.18);
+  --lp-border: rgba(0, 0, 0, 0.07);
+  --lp-border2: rgba(0, 0, 0, 0.12);
+  --lp-border3: rgba(0, 0, 0, 0.18);
+  --lp-hero-grid: rgba(0, 0, 0, 0.08);
+  --lp-noise-opacity: 0.012;
+  --lp-nav-scrolled: rgba(255, 255, 255, 0.88);
+  --lp-window-bg: rgba(250, 250, 252, 0.95);
+  --lp-code-bg: rgba(0, 0, 0, 0.04);
+  --lp-surface-inset: rgba(0, 0, 0, 0.02);
+  --lp-stat-suffix: rgba(10, 10, 15, 0.4);
+
+  /* Brand — from globals */
+  --lp-brand: var(--color-primary);
+  --lp-brand-hover: var(--color-primary-hover);
+  --lp-brand-dim: var(--color-primary-dim);
+  --lp-brand-border: var(--color-primary-border);
+  --lp-brand-glow: rgba(var(--color-primary-rgb), 0.25);
+  --lp-brand-glow-strong: rgba(var(--color-primary-rgb), 0.4);
+  --lp-brand-soft: rgba(var(--color-primary-rgb), 0.12);
+  --lp-brand-ring: rgba(var(--color-primary-rgb), 0.15);
+  --lp-brand-border-hover: rgba(var(--color-primary-rgb), 0.35);
+
+  --lp-secondary: var(--color-secondary);
+  --lp-secondary-dim: var(--color-secondary-dim);
+  --lp-secondary-border: var(--color-secondary-border);
+
+  /* Gradients */
+  --lp-gradient: var(--gradient-brand);
+  --lp-gradient-soft: var(--gradient-brand-soft);
+  --lp-gradient-text: linear-gradient(135deg, var(--color-primary) 0%, var(--ac3) 100%);
+  --lp-gradient-featured: linear-gradient(
+    160deg,
+    var(--lp-brand-soft) 0%,
+    var(--lp-bg2) 60%
+  );
+  --lp-gradient-card-accent: linear-gradient(
+    145deg,
+    var(--lp-brand-soft),
+    var(--lp-bg2)
+  );
+  --lp-gradient-line: linear-gradient(90deg, transparent, var(--lp-brand), transparent);
+
+  /* Orbs */
+  --lp-orb1: rgba(var(--color-primary-rgb), 0.14);
+  --lp-orb2: rgba(var(--color-secondary-rgb), 0.08);
+  --lp-orb3: rgba(var(--color-secondary-rgb), 0.07);
+
+  /* Shadows */
+  --lp-shadow: rgba(0, 0, 0, 0.15);
+  --lp-shadow-sm: 0 4px 20px var(--lp-brand-glow-strong);
+  --lp-shadow-glow: 0 0 24px var(--lp-brand-glow);
+  --lp-shadow-glow-hover: 0 0 36px var(--lp-brand-glow), var(--lp-shadow-sm);
+  --lp-shadow-hero: 0 8px 40px rgba(var(--color-primary-rgb), 0.45);
+  --lp-shadow-hero-hover: 0 16px 56px rgba(var(--color-primary-rgb), 0.5);
+  --lp-shadow-card: 0 20px 60px var(--lp-shadow);
+  --lp-shadow-card-accent: 0 20px 60px var(--lp-shadow), 0 0 0 1px var(--lp-brand-ring);
+  --lp-shadow-window: 0 40px 120px var(--lp-shadow), 0 0 0 1px var(--lp-border);
+  --lp-shadow-logo: 0 0 20px var(--lp-brand-glow);
+
+  /* Semantic */
+  --lp-accent-text: var(--color-primary);
+  --lp-success-border: color-mix(in srgb, var(--emerald) 20%, transparent);
+
+  /* Legacy aliases (used in components) */
+  --lp-violet-dim: var(--lp-brand-dim);
+  --lp-violet-glow: var(--lp-brand-glow);
+  --lp-violet-border: var(--lp-brand-border);
+
+  background: var(--lp-bg);
+  color: var(--lp-text);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.dark .landing-page {
+  --lp-bg: #060608;
+  --lp-bg2: #0c0c10;
+  --lp-bg3: #111116;
+  --lp-bg4: #18181f;
+  --lp-fg: #ffffff;
+
+  --lp-grey1: rgba(255, 255, 255, 0.06);
+  --lp-grey2: rgba(255, 255, 255, 0.1);
+  --lp-text: rgba(255, 255, 255, 0.9);
+  --lp-text-muted: rgba(255, 255, 255, 0.45);
+  --lp-text-faint: rgba(255, 255, 255, 0.2);
+  --lp-border: rgba(255, 255, 255, 0.07);
+  --lp-border2: rgba(255, 255, 255, 0.12);
+  --lp-border3: rgba(255, 255, 255, 0.18);
+  --lp-hero-grid: rgba(255, 255, 255, 0.06);
+  --lp-noise-opacity: 0.025;
+  --lp-nav-scrolled: rgba(6, 6, 8, 0.8);
+  --lp-window-bg: rgba(12, 12, 16, 0.95);
+  --lp-code-bg: rgba(0, 0, 0, 0.4);
+  --lp-surface-inset: rgba(255, 255, 255, 0.03);
+  --lp-stat-suffix: rgba(255, 255, 255, 0.4);
+  --lp-shadow: rgba(0, 0, 0, 0.4);
+
+  --lp-brand-dim: rgba(var(--color-primary-rgb), 0.18);
+  --lp-brand-border: rgba(var(--color-primary-rgb), 0.3);
+  --lp-brand-glow: rgba(var(--color-primary-rgb), 0.35);
+  --lp-brand-glow-strong: rgba(var(--color-primary-rgb), 0.45);
+  --lp-brand-soft: rgba(var(--color-primary-rgb), 0.12);
+  --lp-brand-ring: rgba(var(--color-primary-rgb), 0.15);
+  --lp-brand-border-hover: rgba(var(--color-primary-rgb), 0.35);
+
+  --lp-orb1: rgba(var(--color-primary-rgb), 0.28);
+  --lp-orb2: rgba(var(--color-secondary-rgb), 0.12);
+  --lp-orb3: rgba(var(--color-secondary-rgb), 0.1);
+
+  --lp-accent-text: var(--ac3);
+}
+
+.landing-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px;
+  opacity: var(--lp-noise-opacity);
+}
+
+.landing-page > * {
+  position: relative;
+  z-index: 2;
+}
+
+.landing-logo-gem {
+  background: var(--lp-gradient);
+  box-shadow: var(--lp-shadow-logo);
+}
+
+.landing-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  padding: 0 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.4s, backdrop-filter 0.4s, border-color 0.4s;
+}
+
+.landing-nav.scrolled {
+  background: var(--lp-nav-scrolled);
+  backdrop-filter: blur(24px) saturate(1.6);
+  border-bottom: 1px solid var(--lp-border);
+}
+
+.landing-nav-link {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--lp-text-muted);
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.landing-nav-link:hover {
+  color: var(--lp-fg);
+  background: var(--lp-grey1);
+}
+
+.landing-btn-ghost {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--lp-text-muted);
+  padding: 8px 18px;
+  border-radius: 9px;
+  border: 1px solid var(--lp-border2);
+  transition: all 0.2s;
+}
+
+.landing-btn-ghost:hover {
+  color: var(--lp-fg);
+  border-color: var(--lp-border3);
+  background: var(--lp-grey1);
+}
+
+.landing-btn-cta {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--lp-on-brand);
+  padding: 8px 18px;
+  border-radius: 9px;
+  background: var(--lp-brand);
+  box-shadow: var(--lp-shadow-glow);
+  transition: all 0.25s;
+}
+
+.landing-btn-cta:hover {
+  background: var(--lp-brand-hover);
+  box-shadow: var(--lp-shadow-glow-hover);
+  transform: translateY(-1px);
+}
+
+.landing-section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lp-accent-text);
+  margin-bottom: 20px;
+}
+
+.landing-section-h2 {
+  font-family: var(--font-inter-tight), system-ui, sans-serif;
+  font-size: clamp(38px, 5vw, 68px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.96;
+  color: var(--lp-fg);
+  margin-bottom: 20px;
+}
+
+.landing-section-p {
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--lp-text-muted);
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+  max-width: 480px;
+}
+
+.landing-feature-card {
+  background: var(--lp-bg2);
+  border: 1px solid var(--lp-border);
+  border-radius: 18px;
+  padding: 32px;
+  transition: border-color 0.35s, transform 0.35s, background 0.35s;
+}
+
+.landing-feature-card:hover {
+  border-color: var(--lp-border2);
+  transform: translateY(-3px);
+  background: var(--lp-bg3);
+}
+
+.landing-pricing-card {
+  background: var(--lp-bg2);
+  border: 1px solid var(--lp-border);
+  border-radius: 20px;
+  padding: 36px;
+  position: relative;
+  transition: border-color 0.35s, transform 0.35s;
+}
+
+.landing-pricing-card:hover {
+  transform: translateY(-4px);
+}
+
+.landing-pricing-card.featured {
+  border-color: var(--lp-brand-border);
+  background: var(--lp-gradient-featured);
+}
+
+.landing-pricing-card.featured::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--lp-gradient-line);
+}
+
+.landing-hero-btn-primary {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--lp-on-brand);
+  background: var(--lp-brand);
+  padding: 14px 32px;
+  border-radius: 12px;
+  box-shadow: var(--lp-shadow-hero);
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  transition: all 0.3s var(--ez);
+}
+
+.landing-hero-btn-primary:hover {
+  background: var(--lp-brand-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--lp-shadow-hero-hover);
+}
+
+.landing-hero-btn-secondary {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--lp-text-muted);
+  background: var(--lp-grey1);
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: 1px solid var(--lp-border2);
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s;
+}
+
+.landing-hero-btn-secondary:hover {
+  color: var(--lp-fg);
+  background: var(--lp-grey2);
+  border-color: var(--lp-border3);
+}
+
+.gradient-text {
+  background: var(--lp-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Stats */
+.landing-stats-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--lp-border);
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--lp-bg2);
+}
+
+.landing-stat-card {
+  padding: 40px 36px;
+  border-right: 1px solid var(--lp-border);
+  transition: background 0.3s;
+}
+
+.landing-stat-card:last-child {
+  border-right: none;
+}
+
+.landing-stat-card:hover {
+  background: var(--lp-bg3);
+}
+
+.landing-stat-num {
+  font-family: var(--font-inter-tight), system-ui, sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 8px;
+  color: var(--lp-fg);
+}
+
+.landing-stat-num .accent-num {
+  background: var(--lp-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Bento grid */
+.landing-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+}
+
+.landing-bento-card {
+  background: var(--lp-bg2);
+  border: 1px solid var(--lp-border);
+  border-radius: 18px;
+  padding: 32px;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.35s, transform 0.35s, background 0.35s;
+}
+
+.landing-bento-card:hover {
+  border-color: var(--lp-border2);
+  transform: translateY(-4px);
+  background: var(--lp-bg3);
+}
+
+.landing-bento-card.accent {
+  background: var(--lp-gradient-card-accent);
+}
+
+.landing-bento-span8 { grid-column: span 8; }
+.landing-bento-span7 { grid-column: span 7; }
+.landing-bento-span5 { grid-column: span 5; }
+.landing-bento-span4 { grid-column: span 4; }
+
+@media (max-width: 900px) {
+  .landing-stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .landing-stat-card:nth-child(2) { border-right: none; }
+  .landing-bento-span8,
+  .landing-bento-span7,
+  .landing-bento-span5,
+  .landing-bento-span4 { grid-column: span 12; }
+}
+
+@media (max-width: 600px) {
+  .landing-stats-inner { grid-template-columns: 1fr; }
+  .landing-stat-card { border-right: none; border-bottom: 1px solid var(--lp-border); }
+  .landing-stat-card:last-child { border-bottom: none; }
+}
+
+.landing-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--emerald);
+  background: var(--emerald-dim);
+  border: 1px solid var(--lp-success-border);
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.landing-live-badge span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--emerald);
+  animation: pulse-dot 1.5s ease infinite;
+}
+
+/* Feature splits */
+.landing-feat-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 80px 0;
+  border-bottom: 1px solid var(--lp-border);
+}
+
+.landing-feat-split:last-child {
+  border-bottom: none;
+}
+
+.landing-feat-split.reverse {
+  direction: rtl;
+}
+
+.landing-feat-split.reverse > * {
+  direction: ltr;
+}
+
+.landing-feat-visual {
+  background: var(--lp-bg2);
+  border: 1px solid var(--lp-border2);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--lp-shadow-card);
+  transition: border-color 0.4s, box-shadow 0.4s;
+}
+
+.landing-feat-split:hover .landing-feat-visual {
+  border-color: var(--lp-border3);
+}
+
+@media (max-width: 900px) {
+  .landing-feat-split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 48px 0;
+  }
+  .landing-feat-split.reverse { direction: ltr; }
+}
+
+/* Format cards */
+.landing-format-card {
+  background: var(--lp-bg2);
+  border: 1px solid var(--lp-border);
+  border-radius: 16px;
+  padding: 26px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s var(--ez);
+  cursor: default;
+}
+
+.landing-format-card:hover {
+  border-color: var(--lp-brand-border-hover);
+  transform: translateY(-5px);
+  box-shadow: var(--lp-shadow-card-accent);
+}
+
+.landing-oauth-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 9px;
+  border: 1px solid var(--lp-border2);
+  color: var(--lp-text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--lp-grey1);
+  transition: all 0.2s;
+}
+
+.landing-oauth-btn:hover {
+  background: var(--lp-grey2);
+  color: var(--lp-fg);
+}
+
+/* Hero window mockup */
+.landing-hero-window {
+  background: var(--lp-window-bg);
+  border: 1px solid var(--lp-border2);
+  box-shadow: var(--lp-shadow-window);
+}
+
+/* Sign in demo tooltip */
+.landing-signin-wrap {
+  position: relative;
+}
+
+.landing-signin-demo-tip {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: max-content;
+  max-width: 280px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--lp-brand-dim);
+  border: 1px solid var(--lp-brand-border);
+  backdrop-filter: blur(12px);
+  font-size: 12px;
+  color: var(--lp-text-muted);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+  pointer-events: none;
+}
+
+.landing-signin-wrap:hover .landing-signin-demo-tip,
+.landing-signin-wrap:focus-within .landing-signin-demo-tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.landing-signin-demo-badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--lp-accent-text);
+}
+
+.landing-signin-demo-text {
+  line-height: 1.4;
+}
+
+.landing-signin-demo-creds {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: ui-monospace, monospace;
+  color: var(--lp-fg);
+}
+
+.landing-signin-demo-creds code {
+  font-size: 11.5px;
+  background: var(--lp-code-bg);
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+
+/* Shared utilities — replace inline backgrounds & shadows in sections */
+.landing-glow-fade {
+  background: linear-gradient(180deg, var(--lp-brand-soft) 0%, transparent 100%);
+}
+
+.landing-glow-radial {
+  background: radial-gradient(ellipse, var(--lp-brand-soft) 0%, transparent 65%);
+}
+
+.landing-section-dot {
+  background: var(--lp-brand);
+}
+
+.landing-pulse-dot-brand {
+  background: var(--lp-brand);
+}
+
+.landing-btn-brand {
+  background: var(--lp-brand);
+  color: var(--lp-on-brand);
+  box-shadow: var(--lp-shadow-glow);
+  transition: all 0.25s var(--ez);
+}
+
+.landing-btn-brand:hover {
+  background: var(--lp-brand-hover);
+  box-shadow: var(--lp-shadow-glow-hover);
+}
+
+.landing-btn-brand-lg {
+  background: var(--lp-brand);
+  color: var(--lp-on-brand);
+  box-shadow: var(--lp-shadow-hero);
+  transition: all 0.25s var(--ez);
+}
+
+.landing-btn-brand-lg:hover {
+  background: var(--lp-brand-hover);
+  box-shadow: var(--lp-shadow-hero-hover);
+}
+
+.landing-badge-brand {
+  background: var(--lp-brand);
+  color: var(--lp-on-brand);
+  box-shadow: var(--lp-shadow-glow);
+}
